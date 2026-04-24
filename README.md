@@ -1,2 +1,7 @@
-# deacademy-dbt
-Repo to store all the dbt code
+# dbt-data-projects
+
+Tech Stack:
+- dbt
+- Snowflake
+- SQL
+- GitHub
