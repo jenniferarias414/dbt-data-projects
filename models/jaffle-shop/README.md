@@ -83,6 +83,15 @@ Sources are configured using dbt `source()` and monitored with **source freshnes
 
 ---
 
+### Data Lineage (DAG)
+
+dbt automatically builds a directed acyclic graph (DAG) showing dependencies between sources and models using `ref()` and `source()`.
+
+This ensures transformations are executed in the correct order and provides full visibility into how data flows through the pipeline.
+
+![dbt Lineage Graph](../../screenshots/dbt-lineage-graph.png)
+
+
 ### Data Flow
 
 Raw Snowflake tables  
