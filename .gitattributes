@@ -1,3 +1,3 @@
-*.sql linguist-language=SQL
-*.yml linguist-detectable=false
-*.yaml linguist-detectable=false
+*.sql linguist-language=SQL linguist-detectable=true
+*.yml linguist-language=YAML linguist-detectable=false
+*.yaml linguist-language=YAML linguist-detectable=false
