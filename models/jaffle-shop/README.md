@@ -91,6 +91,7 @@ This ensures transformations are executed in the correct order and provides full
 
 ![dbt Lineage Graph](../../screenshots/dbt-lineage-graph.png)
 
+---
 
 ### Data Flow
 
