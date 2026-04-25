@@ -85,33 +85,49 @@ Sources are configured using dbt `source()` and monitored with **source freshnes
 
 ### Data Flow
 
-Raw Snowflake tables
-→ Staging models (cleaning & standardization)
+Raw Snowflake tables  
+→ Staging models (cleaning & standardization)  
 → Mart models (business logic & aggregations)
 
 ---
 
 ### Deployment
 
-The project is deployed using **dbt Cloud** with:
+The project is deployed using **dbt Cloud** with a Production environment and scheduled job.
 
-* Production environment
-* Scheduled job execution
-* Job steps:
+**Job configuration:**
 
-  * `dbt deps`
-  * `dbt source freshness`
-  * `dbt build`
-  * `dbt docs generate`
+- Runs source freshness checks (`dbt source freshness`)
+- Executes full pipeline using `dbt build`
+- Automatically generates documentation on run
+
+This setup reflects a typical production workflow where data pipelines are automatically executed, validated, and documented on a recurring schedule.
+
+---
+
+### dbt Cloud Job Run
+
+Example production job run showing pipeline execution and results:
+
+![dbt Cloud Run](screenshots/dbt-cloud-run.png)
+
+---
+
+### Source Freshness Monitoring
+
+Example of freshness check identifying stale upstream data:
+
+![Source Freshness Warning](screenshots/dbt-source-freshness.png)
 
 ---
 
 ### Technologies Used
 
 * dbt
+* dbt Cloud
 * Snowflake
 * SQL
-* dbt Cloud
+* GitHub
 
 ---
 
@@ -141,4 +157,3 @@ dbt source freshness
 dbt docs generate
 dbt docs serve
 ```
-
