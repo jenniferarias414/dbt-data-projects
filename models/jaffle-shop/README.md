@@ -109,7 +109,7 @@ This setup reflects a typical production workflow where data pipelines are autom
 
 Example production job run showing pipeline execution and results:
 
-![dbt Cloud Run](screenshots/dbt-cloud-run.png)
+![dbt Cloud Run](../../screenshots/dbt-cloud-job-run.png)
 
 ---
 
@@ -117,7 +117,7 @@ Example production job run showing pipeline execution and results:
 
 Example of freshness check identifying stale upstream data:
 
-![Source Freshness Warning](screenshots/dbt-source-freshness.png)
+![Source Freshness Warning](../../screenshots/dbt-source-freshness.png)
 
 ---
 
