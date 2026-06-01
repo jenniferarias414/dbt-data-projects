@@ -1,6 +1,22 @@
--- Raw layer model for the AWS Glue + S3 + Snowflake + dbt project.
--- This placeholder confirms the project folder was created correctly.
--- The final raw model will be added in the next step.
+{{
+    config(
+        materialized='table',
+        pre_hook=copy_json('COUNTRY_DETAILS_CP'),
+        schema='RAW'
+    )
+}}
+
+with country_details_raw as (
+
+    select
+        x.value as source_data,
+        current_timestamp(6) as insert_dts
+    from {{ source('country', 'COUNTRY_DETAILS_CP') }} as a,
+    lateral flatten(a.data) as x
+
+)
 
 select
-    current_timestamp() as model_created_at
+    cast(source_data as variant) as source_data,
+    cast(insert_dts as timestamp(6)) as insert_dts
+from country_details_raw
