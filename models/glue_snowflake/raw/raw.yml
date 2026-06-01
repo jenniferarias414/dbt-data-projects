@@ -11,7 +11,7 @@ models:
 
 sources:
   - name: country
-    database: GLUEDB
+    database: "{{ target.database }}"
     schema: PUBLIC
     tables:
       - name: COUNTRY_DETAILS_CP
